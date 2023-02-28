@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // dd('hi');
     $data['users'] = User::all();
-    $data['categories'] = Category::all();
-    // return $users;
-    // return $categories;
+    // return $data['users'];
+    $data['categories'] = Category::with('subCategories')->get();
+    // return $data['categories'];
+    $data['subCategories'] = SubCategory::with('category')->get();
+    //  return $data['subCategories'];
 
     return view('home', $data);
 });

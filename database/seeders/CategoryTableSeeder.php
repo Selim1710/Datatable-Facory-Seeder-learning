@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Database\Seeder;
 
 class CategoryTableSeeder extends Seeder
@@ -14,6 +15,9 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(1000)->create();
+        Category::factory(5)->create()->each(function($cat){
+            $cat->subcategories()->saveMany(SubCategory::factory(3)->make());
+        });
+
     }
 }
