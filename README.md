@@ -2,6 +2,9 @@
 * add a datatable
 * make a seeder and seeding data
 
+  => Command:
+  * php artisan make:factory ModelnameFactory
+
 NameSpace:
 
 use Illuminate\Support\Str;
