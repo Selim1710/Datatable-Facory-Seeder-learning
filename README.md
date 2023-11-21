@@ -1,4 +1,6 @@
-# In this project i have add a datatable and make a seeder where seeding data into category and sub-category table
+# Feature
+* add a datatable
+* make a seeder and seeding data
 
 NameSpace:
 
